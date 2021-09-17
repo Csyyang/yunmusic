@@ -2,7 +2,7 @@
 // #ifndef VUE3
 import Vue from 'vue'
 import App from './App'
-
+import './main.js'
 Vue.config.productionTip = false
 
 App.mpType = 'app'

@@ -2,25 +2,35 @@
 	<page-meta :root-font-size="rootFontSize"></page-meta>
 	<view id="container">
 		<view class="search-header">
-			<uni-icons class="icons" type="list" size="22"></uni-icons>
-			<uni-search-bar class="search" v-model="searchInput" @input="search" cancelButton="none"
-				placeholder="请输入歌曲名/歌手名" />
+			<uni-icons class="icons" color="#FFFFFF" type="list" size="22"></uni-icons>
+			<uni-search-bar class="search" v-model="searchInput" @focus="showSearchComp"   cancelButton="none"
+				placeholder="请输入歌曲名、歌手名" />
 
 		</view>
+		
+		<Search v-if="SearchComp" @closeSearchBox="SearchComp = false"></Search>
 	</view>
 </template>
 
 <script>
+	import Search from './components/Search'
 	export default {
+		components: {
+			Search
+		},
 		data() {
 			return {
 				searchInput: '',
-				rootFontSize: this.$rootFontSize
+				rootFontSize: this.$rootFontSize,
+				SearchComp: false
 			}
 		},
 		methods: {
-			search: function(e) {
+			search(e) {
 				console.log(this.searchInput)
+			},
+			showSearchComp() {
+				this.SearchComp = true
 			}
 		}
 	}
@@ -28,14 +38,23 @@
 
 
 <style lang="scss" scoped>
+	#container {
+		font-size: 16px;
+		position: relative;
+		border-top: 1px solid #e47871;
+	}
 	.search-header {
 		background-color: #d44439;
 		display: flex;
 		height: 44px;
 		align-items: center;
+		position: relative;
+		justify-content: center;
 
 		.icons {
 			padding: 11px;
+			position: absolute;
+			left: 0;
 		}
 
 		.search {
