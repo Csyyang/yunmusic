@@ -1,0 +1,17 @@
+{
+	"pages": [{
+		"path": "pages/index/index",
+		"style": {
+			
+		}
+	}],
+	"globalStyle": {
+		"navigationBarTextStyle": "white",
+		"navigationBarTitleText": "YUNMUSIC",
+		"navigationBarBackgroundColor": "#d44439",
+		"backgroundColor": "#F8F8F8",
+		"app-plus": {
+			"background": "#efeff4"
+		}
+	}
+}
