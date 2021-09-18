@@ -1,14 +1,15 @@
 <template>
-	<page-meta :root-font-size="rootFontSize"></page-meta>
+	<page-meta :root-font-size="rootFontSize" page-style="font-size: 16px;height: 100%;border-box: boxsizing">
+	</page-meta>
 	<view id="container">
 		<view class="search-header">
 			<uni-icons class="icons" color="#FFFFFF" type="list" size="22"></uni-icons>
-			<uni-search-bar class="search" v-model="searchInput" @focus="showSearchComp"   cancelButton="none"
+			<uni-search-bar class="search" v-model="searchInput" @focus="showSearchComp" cancelButton="none"
 				placeholder="请输入歌曲名、歌手名" />
 
 		</view>
-		
-		<Search v-if="SearchComp" @closeSearchBox="SearchComp = false"></Search>
+
+		<Search class="search" v-if="SearchComp" @closeSearchBox="SearchComp = false"></Search>
 	</view>
 </template>
 
@@ -39,10 +40,9 @@
 
 <style lang="scss" scoped>
 	#container {
-		font-size: 16px;
-		position: relative;
 		border-top: 1px solid #e47871;
 	}
+
 	.search-header {
 		background-color: #d44439;
 		display: flex;

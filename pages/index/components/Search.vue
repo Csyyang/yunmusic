@@ -2,24 +2,31 @@
 	<view class="c-search">
 		<view class="header">
 			<uni-icons class="search-icon" @click="closeSearchBox" color="#fff" type="arrowleft" size="22"></uni-icons>
-			<input class="input" placeholder-class="search-input" type="text" placeholder="搜索歌曲、歌手" />
+			<input class="input" placeholder-class="search-input" type="text" placeholder="搜索歌曲、歌手"
+				@input="searchHot" />
 		</view>
 
 		<view class="search-body">
-			<HotSearch />
+			<!-- <HotSearch /> -->
+			<SearchResult />
 		</view>
 	</view>
 </template>
 
 <script>
 	import HotSearch from './HotSearch'
+	import SearchResult from './SearchResult'
 	export default {
 		components: {
-			HotSearch
+			HotSearch,
+			SearchResult
 		},
 		methods: {
 			closeSearchBox() {
 				this.$emit('closeSearchBox')
+			},
+			searchHot(e) {
+				console.log(e.detail.value)
 			}
 		}
 	}
@@ -34,6 +41,8 @@
 		overflow-y: scroll;
 
 		.header {
+			border-top: 1px solid #e47871;
+			
 			display: flex;
 			align-items: center;
 			background-color: rgb(212, 68, 57);
