@@ -34,15 +34,12 @@
 
 <style lang="scss" scoped>
 	.c-search {
-		position: absolute;
-		top: 0;
-		z-index: 1000;
-		height: 100%;
-		overflow-y: scroll;
+		background-color: #FFFFFF;
+
 
 		.header {
 			border-top: 1px solid #e47871;
-			
+
 			display: flex;
 			align-items: center;
 			background-color: rgb(212, 68, 57);
@@ -64,5 +61,10 @@
 
 
 		}
+	}
+	
+	.search-body {
+		height: calc(100vh - 88px);
+		overflow: scroll;
 	}
 </style>

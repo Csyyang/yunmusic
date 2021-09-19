@@ -10,7 +10,6 @@
 
 <style lang="scss" scoped>
 	.sings {
-		height: 50px;
 		padding: 8px 20px;
 		border-bottom: 1px solid #e4e4e4;
 		display: flex;
